@@ -22,9 +22,24 @@ class MainActivity : AppCompatActivity() {
         val callButton=findViewById<Button>(R.id.call_btn)
         val dialno:EditText=findViewById(R.id.Phone)
         callButton.setOnClickListener{
-            call(editText.text.toString())
+            call(dialno.text.toString())
         }
-        
+        val callLogButton=findViewById<Button>(R.id.calllog_btn)
+        callLogButton.setOnClickListener{
+            callLog()
+        }
+        val galleryButton=findViewById<Button>(R.id.gallery_btn)
+        galleryButton.setOnClickListener{
+            gallery()
+        }
+        val cameraButton=findViewById<Button>(R.id.camera_btn)
+        cameraButton.setOnClickListener{
+            camera()
+        }
+        val alarmButton=findViewById<Button>(R.id.alarm_btn)
+        alarmButton.setOnClickListener{
+            alarm()
+        }
     }
     fun openBrowser(string: String){
         Intent(Intent.ACTION_VIEW, Uri.parse(string)).also { startActivity(it) }
